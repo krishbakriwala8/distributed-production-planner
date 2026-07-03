@@ -1,0 +1,54 @@
+# Core frameworks
+# NOTE: mesa==1.10.1 does not exist on PyPI (mesa jumped from 1.2.1
+# straight to 2.1). Pinned to the latest 2.x release, which still has the
+# mesa.time / mesa.datacollection API this codebase uses (Mesa 3.0 removed
+# mesa.time entirely, so do not bump past 2.x without a code migration).
+mesa==2.4.0
+simpy==4.1.1
+
+# Optimization
+ortools==9.7.2996
+pulp==2.7.0
+pyomo==6.6.1
+
+# Game theory
+# NOTE: nashpy==0.0.48 does not exist on PyPI (latest 0.0.x release is
+# 0.0.43). gambit-core is not published on PyPI at all and is also unused
+# anywhere in this codebase, so it has been dropped.
+nashpy==0.0.43
+
+# API & Web
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.4.2
+
+# Frontend/Visualization
+streamlit==1.28.1
+plotly==5.17.0
+pandas==2.1.1
+# NOTE: numpy==1.24.3 has no prebuilt wheel for Python 3.12+ and fails to
+# build from source in modern environments; bumped to a version that still
+# satisfies pandas==2.1.1 / matplotlib==3.8.1 but supports 3.9-3.12+.
+numpy==1.26.4
+matplotlib==3.8.1
+
+# Data handling
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+redis==5.0.0
+
+# Communication
+celery==5.3.4
+paho-mqtt==1.6.1
+
+# Development & Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.0
+
+# Utilities
+python-dotenv==1.0.0
+colorama==0.4.6
+tqdm==4.66.1
